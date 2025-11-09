@@ -1,24 +1,20 @@
-import { BrowserRouter, Routes, Route } from "react-router-dom";
-import Layout from "./components/Layout";
-import Home from "./components/pages/Home";
-import Dashboard from "./components/pages/Dashboard";
-import Report from "./components/pages/Report";
-import Activity from "./components/pages/Activity";
-import Profile from "./components/pages/Profile";
+import Navbar from "./components/Navbar";
+import Hero from "./components/Hero";
+import StatsGrid from "./components/StatsGrid";
+import RecentActivity from "./components/RecentActivity";
+import Footer from "./components/Footer";
 
 function App() {
   return (
-    <BrowserRouter>
-      <Layout>
-        <Routes>
-          <Route path="/" element={<Home />} />
-          <Route path="/dashboard" element={<Dashboard />} />
-          <Route path="/report" element={<Report />} />
-          <Route path="/activity" element={<Activity />} />
-          <Route path="/profile" element={<Profile />} />
-        </Routes>
-      </Layout>
-    </BrowserRouter>
+    <div className="min-h-screen bg-white dark:bg-neutral-950 text-neutral-900 dark:text-white">
+      <Navbar />
+      <main>
+        <Hero />
+        <StatsGrid />
+        <RecentActivity />
+      </main>
+      <Footer />
+    </div>
   );
 }
 
